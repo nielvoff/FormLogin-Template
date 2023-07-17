@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Login dengan SweetAlert</title>
+    <!-- SweetAlert link -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+      body {
+        background-color: #4a4e69;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        margin: auto;
+        width: 50%;
+        border: 3px solid #f1f1f1;
+        padding: 30px;
+        background-color: white;
+        color: #4a4e69;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        border-radius: 0;
+        transform: translateY(50%);
+        animation: slideUp 1s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 16px;
+        border-radius: 0;
+      }
+
+      button {
+        background-color: #4a4e69;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 50px;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
+      }
+
+      button:hover {
+        background-color: #3c3e54;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50%);
+        }
+        to {
+          transform: translateY(0%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Masukkan Username Anda" name="username" id="username" required />
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Masukkan Password Anda" name="password" id="password" required />
+
+      <button type="submit" id="login-button">Login</button>
+
+      <div id="error-message" class="error-message" style="display: none"></div>
+    </form>
+
+    <script>
+      document.querySelector("#login-button").addEventListener("click", function (e) {
+        e.preventDefault();
+
+        var username = document.querySelector("#username").value;
+        var password = document.querySelector("#password").value;
+
+        if (username == "" && password == "") {
+          // Memunculkan pesan error menggunakan SweetAlert
+          swal({
+            title: "Error!",
+            text: "Username dan password belum diisi",
+            icon: "error",
+            button: "OK",
+          });
+          document.querySelector("#username").value = "";
+          document.querySelector("#password").value = "";
+          return;
+        }
+
+        if (username == "") {
+          swal({
+            title: "Error!",
+            text: "Username belum diisi",
+            icon: "error",
+            button: "OK",
+          });
+          document.querySelector("#username").value = "";
+          return;
+        }
+
+        if (password == "") {
+          swal({
+            title: "Error!",
+            text: "Password belum diisi",
+            icon: "error",
+            button: "OK",
+          });
+          document.querySelector("#password").value = "";
+          return;
+        }
+
+        swal({
+          title: "Berhasil!",
+          text: "Anda berhasil login",
+          icon: "success",
+          button: "OK",
+        }).then(function () // Jika berhasil, redirect ke halaman lain
+        {
+          window.location.href = "index.html";
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>My website</title>
+  </head>
+
+  <body style="background-color: rgb(138, 89, 146)">
+    <div class="h1">
+      <h1>Welcome to my blog</h1>
+    </div>
+    <div class="image"><img width="215" height="210" src="/img/Sleepy cutie.jpeg" /><img /></div>
+    <br />
+    <br />
+    <form action="login.php" method="POST">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" placeholder="password..." id="password" name="password" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" placeholder="email..." id="password" name="password" required />
+      </div>
+      <button name="login">login</button>
+      <div class="row-or">
+        <hr />
+        or
+        <hr />
+      </div>
+      <div class="create">
+        don't have an account?<span><a href="#">create account</a></span>
+      </div>
+    </form>
+  </body>
+</html>

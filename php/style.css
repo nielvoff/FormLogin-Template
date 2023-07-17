@@ -1,0 +1,80 @@
+.h1 {
+  font-size: 20px;
+  font-family: Arial;
+  color: rgb(81, 45, 84);
+  text-align: center;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  border-radius: 50%;
+}
+
+form {
+  max-width: 370px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  background-color: #d491c7;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  background-color: #bebebe;
+  outline: none;
+}
+
+button {
+  padding: 10px 22px;
+  background-color: #af4c8c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.row-or {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-or hr {
+  width: 100%;
+  border: 0.2px solid #222;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.create a {
+  margin-left: 5px;
+  text-decoration: none;
+}
